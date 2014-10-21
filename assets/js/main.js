@@ -1,3 +1,7 @@
+
+var kochhoodTrack = "Track";
+var kochhoodLevel = "Level";
+
 var docCookies = {
   getItem: function (sKey) {
     if (!sKey) { return null; }
