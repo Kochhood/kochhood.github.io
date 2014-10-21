@@ -1,6 +1,7 @@
 
 var kochhoodTrack = "Track";
 var kochhoodLevel = "Level";
+var kochhoodEmail = "KH_Email";
 
 var docCookies = {
   getItem: function (sKey) {
@@ -13,14 +14,14 @@ var docCookies = {
     if (vEnd) {
       switch (vEnd.constructor) {
         case Number:
-          sExpires = vEnd === Infinity ? "; expires=Fri, 31 Dec 9999 23:59:59 GMT" : "; max-age=" + vEnd;
-          break;
+        sExpires = vEnd === Infinity ? "; expires=Fri, 31 Dec 9999 23:59:59 GMT" : "; max-age=" + vEnd;
+        break;
         case String:
-          sExpires = "; expires=" + vEnd;
-          break;
+        sExpires = "; expires=" + vEnd;
+        break;
         case Date:
-          sExpires = "; expires=" + vEnd.toUTCString();
-          break;
+        sExpires = "; expires=" + vEnd.toUTCString();
+        break;
       }
     }
     document.cookie = encodeURIComponent(sKey) + "=" + encodeURIComponent(sValue) + sExpires + (sDomain ? "; domain=" + sDomain : "") + (sPath ? "; path=" + sPath : "") + (bSecure ? "; secure" : "");
@@ -38,6 +39,6 @@ var docCookies = {
   keys: function () {
     var aKeys = document.cookie.replace(/((?:^|\s*;)[^\=]+)(?=;|$)|^\s*|\s*(?:\=[^;]*)?(?:\1|$)/g, "").split(/\s*(?:\=[^;]*)?;\s*/);
     for (var nLen = aKeys.length, nIdx = 0; nIdx < nLen; nIdx++) { aKeys[nIdx] = decodeURIComponent(aKeys[nIdx]); }
-    return aKeys;
+      return aKeys;
   }
 };
