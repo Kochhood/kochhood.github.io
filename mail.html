@@ -59,11 +59,11 @@
         <div class="pure-u-1 pure-u-md-1-1">
             <div class="l-box">
 
-             <!-- Begin MailChimp Signup Form -->
-             <div id="mc_embed_signup">
-                 <h2>Danke!</h2>
-                 <h3 class="information-head">Erhalte deine Rezepte jetzt</h3>
-                 <p>
+               <!-- Begin MailChimp Signup Form -->
+               <div id="mc_embed_signup">
+                   <h2>Danke!</h2>
+                   <h3 class="information-head">Erhalte deine Rezepte jetzt</h3>
+                   <p>
                     Vielen Dank für dein Interesse, wir freuen uns sehr. Wenn du uns deine E-mail verräts schicken wir das Rezept, sobal es verfügbar ist. Freu dich schon jetzt aufs kochen ;)
                 </p>
                 <form action="//github.us8.list-manage.com/subscribe/post?u=c38dfb7c0c685ac6c5652b528&amp;id=4aabdb97fe" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate pure-form pure-form-aligned" target="_blank" novalidate>
@@ -120,8 +120,13 @@ var form = document.getElementById('mc-embedded-subscribe-form');
 document.getElementById("mce-MMERGE1").value = track;
 document.getElementById("mce-MMERGE2").value = level;
 
+if (docCookies.getItem("KH_Email") !== null) {
+    window.analytics.identify({email: docCookies.getItem("KH_Email")});
+}
+
 submitButton.addEventListener('click', function () {
     var userEmail = document.getElementById("mce-EMAIL").value;
+    docCookies.setItem(kochhoodEmail,userEmail);
     window.analytics.identify({email: userEmail, Track: track, Level: level});
     window.analytics.trackForm(form, 'Newsletter signup performed', {email: userEmail, Track: track, Level: level});
 });

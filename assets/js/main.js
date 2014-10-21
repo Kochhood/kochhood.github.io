@@ -1,6 +1,7 @@
 
 var kochhoodTrack = "Track";
 var kochhoodLevel = "Level";
+var kochhoodEmail = "KH_Email";
 
 var docCookies = {
   getItem: function (sKey) {

@@ -134,20 +134,20 @@
         var mediumLink = document.getElementById('medium');
         var expertLink = document.getElementById('expert');
 
+        if (docCookies.getItem("KH_Email") !== null) {
+            window.analytics.identify({email: docCookies.getItem("KH_Email")});
+        }
 
         beginnerLink.addEventListener('click', function () {
             docCookies.setItem(kochhoodLevel,beginnerLink.id);
-            window.analytics.trackLink(beginnerLink, 'Level selected', {Track: beginnerLink.id});
         });
 
         mediumLink.addEventListener('click', function () {
             docCookies.setItem(kochhoodLevel,mediumLink.id);
-            window.analytics.trackLink(mediumLink, 'Level selected', {Track: mediumLink.id});
         });
 
         expertLink.addEventListener('click', function () {
             docCookies.setItem(kochhoodLevel,expertLink.id);
-            window.analytics.trackLink(expertLink, 'Level selected', {Track: expertLink.id});
         });
 
         </script>

@@ -118,20 +118,20 @@
         var lowcarbLink = document.getElementById('lowcarb');
         var veggyLink = document.getElementById('vegetarian');
 
+        if (docCookies.getItem("KH_Email") !== null) {
+            window.analytics.identify({email: docCookies.getItem("KH_Email")});
+        }
 
         pastaLink.addEventListener('click', function () {
             docCookies.setItem(kochhoodTrack,pastaLink.id);
-            window.analytics.trackLink(pastaLink, 'Track selected', {Track: pastaLink.id});
         });
 
         veggyLink.addEventListener('click', function () {
             docCookies.setItem(kochhoodTrack,veggyLink.id);
-            window.analytics.trackLink(veggyLink, 'Track selected', {Track: veggyLink.id});
         });
 
         lowcarbLink.addEventListener('click', function () {
             docCookies.setItem(kochhoodTrack,lowcarbLink.id);
-            window.analytics.trackLink(lowcarbLink, 'Track selected', {Track: lowcarbLink.id});
         });
 
         </script>
