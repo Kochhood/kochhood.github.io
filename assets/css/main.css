@@ -141,8 +141,8 @@ p {
 }
 .track-header h2 {
     margin: 0;
-    padding-top: 2em;
-    font-size: 1em;
+    padding-top: 0.6em;
+    font-size: 1.3em;
     font-weight: normal;
 
 }
@@ -166,7 +166,7 @@ p {
     display: block;
     text-transform: uppercase;
     font-size: 0.2em;
-    padding-bottom: 2em;
+    padding-top: 2em;
     font-weight: 400;
     color: rgba(255, 255, 255, 0.5);
     *color: #fff;
