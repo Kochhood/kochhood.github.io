@@ -52,9 +52,9 @@
                             </div>
                             <div class="mc-field-group">
 
-                                <input type="hidden" name="MMERGE1" class="" id="mce-MMERGE1">
+                                <input type="hidden" name="TRACK" class="" id="mce-TRACK">
 
-                                <input type="hidden" name="MMERGE2" class="" id="mce-MMERGE2">
+                                <input type="hidden" name="TRACKLEVEL" class="" id="mce-TRACKLEVEL">
                             </div>
                             <div id="mce-responses" class="clear">
                                 <div class="response" id="mce-error-response" style="display:none"></div>
@@ -92,8 +92,8 @@ var track = docCookies.getItem(kochhoodTrack);
 var level = docCookies.getItem(kochhoodLevel);
 var form = document.getElementById('mc-embedded-subscribe-form');
 
-document.getElementById("mce-MMERGE1").value = track;
-document.getElementById("mce-MMERGE2").value = level;
+document.getElementById("mce-TRACK").value = track;
+document.getElementById("mce-TRACKLEVEL").value = level;
 
 if (docCookies.getItem("KH_Email") !== null) {
     window.analytics.identify({email: docCookies.getItem("KH_Email")});
